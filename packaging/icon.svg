@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024"
+     viewBox="0 0 1024 1024">
+  <!-- bar-text app icon: black bitmap wordmark on a white rounded card.
+
+       Wordmark "bar_text" set in Jersey 15 Regular at a 27px design size,
+       rasterised 8x with anti-aliasing, font smoothing and subpixel
+       positioning disabled, then collapsed block-by-block to the design grid and
+       scaled up 8x as whole square blocks. The glyph grid is
+       88x18 design pixels; the baseline is grid row
+       14 and the x-height band spans rows 3...14.
+
+       Regenerate with: swift scripts/build-wordmark.swift
+
+       Font licence: SIL Open Font License 1.1, see packaging/fonts/OFL.txt -->
+
+  <!-- card: 824px art square centred in the 1024px canvas, macOS icon
+       proportions; hairline edge so the white card reads on white backgrounds -->
+  <rect x="100" y="100" width="824" height="824" rx="185.4" fill="#ffffff"/>
+  <rect x="101" y="101" width="822" height="822"
+        rx="184.4" fill="none" stroke="#000000" stroke-opacity="0.07"
+        stroke-width="2"/>
+
+  <!-- wordmark -->
+  <path fill="#000000" shape-rendering="crispEdges" d="M160 440h24v8h-24zM160 448h24v8h-24zM560 448h8v8h-8zM832 448h8v8h-8zM160 456h24v8h-24zM552 456h16v8h-16zM824 456h16v8h-16zM160 464h24v8h-24zM544 464h24v8h-24zM816 464h24v8h-24zM160 472h24v8h-24zM192 472h32v8h-32zM272 472h48v8h-48zM352 472h24v8h-24zM384 472h32v8h-32zM544 472h24v8h-24zM624 472h48v8h-48zM704 472h24v8h-24zM760 472h24v8h-24zM816 472h24v8h-24zM160 480h72v8h-72zM264 480h64v8h-64zM352 480h72v8h-72zM528 480h64v8h-64zM616 480h64v8h-64zM704 480h24v8h-24zM760 480h24v8h-24zM800 480h64v8h-64zM160 488h80v8h-80zM256 488h80v8h-80zM352 488h64v8h-64zM528 488h64v8h-64zM608 488h80v8h-80zM704 488h32v8h-32zM752 488h32v8h-32zM800 488h64v8h-64zM160 496h32v8h-32zM216 496h24v8h-24zM312 496h24v8h-24zM352 496h32v8h-32zM400 496h8v8h-8zM544 496h24v8h-24zM608 496h24v8h-24zM664 496h24v8h-24zM712 496h64v8h-64zM816 496h24v8h-24zM160 504h24v8h-24zM216 504h24v8h-24zM272 504h64v8h-64zM352 504h24v8h-24zM544 504h24v8h-24zM608 504h24v8h-24zM664 504h24v8h-24zM720 504h48v8h-48zM816 504h24v8h-24zM160 512h24v8h-24zM216 512h24v8h-24zM264 512h72v8h-72zM352 512h24v8h-24zM544 512h24v8h-24zM608 512h80v8h-80zM728 512h32v8h-32zM816 512h24v8h-24zM160 520h24v8h-24zM216 520h24v8h-24zM256 520h24v8h-24zM312 520h24v8h-24zM352 520h24v8h-24zM544 520h24v8h-24zM608 520h80v8h-80zM720 520h48v8h-48zM816 520h24v8h-24zM160 528h24v8h-24zM216 528h24v8h-24zM256 528h24v8h-24zM312 528h24v8h-24zM352 528h24v8h-24zM544 528h24v8h-24zM608 528h24v8h-24zM712 528h64v8h-64zM816 528h24v8h-24zM160 536h80v8h-80zM256 536h80v8h-80zM352 536h24v8h-24zM544 536h32v8h-32zM608 536h80v8h-80zM704 536h32v8h-32zM752 536h32v8h-32zM816 536h32v8h-32zM160 544h72v8h-72zM264 544h72v8h-72zM352 544h24v8h-24zM552 544h40v8h-40zM616 544h64v8h-64zM704 544h24v8h-24zM760 544h24v8h-24zM824 544h40v8h-40zM160 552h64v8h-64zM272 552h32v8h-32zM312 552h24v8h-24zM352 552h24v8h-24zM560 552h32v8h-32zM624 552h48v8h-48zM704 552h24v8h-24zM760 552h24v8h-24zM832 552h32v8h-32zM432 560h80v8h-80zM432 568h80v8h-80zM432 576h80v8h-80z"/>
+</svg>
