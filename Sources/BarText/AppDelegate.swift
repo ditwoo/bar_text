@@ -7,9 +7,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        item.autosaveName = "bar-text"
+        item.autosaveName = "bar_text"
         item.button?.title = title
-        item.button?.toolTip = "bar-text"
+        item.button?.toolTip = "bar_text"
 
         let menu = NSMenu()
         let editItem = NSMenuItem(

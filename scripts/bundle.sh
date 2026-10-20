@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Build bar-text and assemble a standalone macOS .app bundle.
+# Build bar_text and assemble a standalone macOS .app bundle.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-APP_NAME="bar-text"
+APP_NAME="bar_text"
 BUNDLE="$ROOT/dist/$APP_NAME.app"
 
 swift build -c release

@@ -282,7 +282,7 @@ for row in 0..<gridHeight {
 let svg = """
 <svg xmlns="http://www.w3.org/2000/svg" width="\(canvas)" height="\(canvas)"
      viewBox="0 0 \(canvas) \(canvas)">
-  <!-- bar-text app icon: black bitmap wordmark on a white rounded card.
+  <!-- bar_text app icon: black bitmap wordmark on a white rounded card.
 
        Wordmark "\(opts.text)" set in \(fontName) at a \(opts.ppem)px design size,
        rasterised \(superFactor)x with anti-aliasing, font smoothing and subpixel

@@ -2,14 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "bar-text",
+    name: "bar_text",
     platforms: [
         .macOS(.v11)
     ],
     products: [
         // Product name sets the binary name, so the .app bundle keeps
-        // CFBundleExecutable = bar-text (see packaging/Info.plist).
-        .executable(name: "bar-text", targets: ["BarText"])
+        // CFBundleExecutable = bar_text (see packaging/Info.plist).
+        .executable(name: "bar_text", targets: ["BarText"])
     ],
     targets: [
         .executableTarget(
