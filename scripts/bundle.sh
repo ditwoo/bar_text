@@ -8,12 +8,12 @@ cd "$ROOT"
 APP_NAME="bar-text"
 BUNDLE="$ROOT/dist/$APP_NAME.app"
 
-cargo build --release
+swift build -c release
 
 rm -rf "$BUNDLE"
 mkdir -p "$BUNDLE/Contents/MacOS" "$BUNDLE/Contents/Resources"
 
-cp "target/release/$APP_NAME" "$BUNDLE/Contents/MacOS/$APP_NAME"
+cp ".build/release/$APP_NAME" "$BUNDLE/Contents/MacOS/$APP_NAME"
 cp "packaging/Info.plist" "$BUNDLE/Contents/Info.plist"
 
 if [ -f "packaging/AppIcon.icns" ]; then
