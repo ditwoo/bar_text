@@ -1,0 +1,72 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths: [VERSION]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build & publish release
+    # Swift Testing (import Testing) needs a Swift 6 toolchain, which ships
+    # with Xcode 16 on the macos-15 runners.
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read version
+        id: version
+        run: echo "value=$(tr -d '[:space:]' < VERSION)" >> "$GITHUB_OUTPUT"
+
+      - name: Check whether the tag already exists
+        id: check
+        run: |
+          if git ls-remote --tags origin "refs/tags/v${{ steps.version.outputs.value }}" | grep -q .; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Tag v${{ steps.version.outputs.value }} already exists; nothing to release."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Swift version
+        if: steps.check.outputs.exists == 'false'
+        run: swift --version
+
+      - name: Test
+        if: steps.check.outputs.exists == 'false'
+        run: swift test
+
+      - name: Build universal .app bundle
+        if: steps.check.outputs.exists == 'false'
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
+          BUILD_NUMBER: ${{ github.run_number }}
+          ARCHS: arm64 x86_64
+        run: ./scripts/bundle.sh
+
+      - name: Verify architectures
+        if: steps.check.outputs.exists == 'false'
+        run: lipo -info dist/bar_text.app/Contents/MacOS/bar_text
+
+      - name: Package
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          ditto -c -k --sequesterRsrc --keepParent \
+            dist/bar_text.app "dist/bar_text-${{ steps.version.outputs.value }}.zip"
+
+      - name: Create GitHub release
+        if: steps.check.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v${{ steps.version.outputs.value }}" \
+            "dist/bar_text-${{ steps.version.outputs.value }}.zip" \
+            --target main \
+            --title "v${{ steps.version.outputs.value }}" \
+            --generate-notes
