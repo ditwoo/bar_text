@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="packaging/icon.svg" width="128" alt="bar_text icon">
+  <img src="packaging/icon.svg" width="128" alt="bar_text icon" style="box-shadow: 5px 5px 10px #999999;">
 </p>
 
 <h1 align="center">bar_text</h1>
